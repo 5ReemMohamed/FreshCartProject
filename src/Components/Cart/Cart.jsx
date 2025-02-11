@@ -121,7 +121,7 @@ export default function Cart() {
     const {data} = await cashPayment(cartId,cashFormik.values);
     setCart(0)
     
-        location.href="/allorders"
+        location.href="allorders"
    
   }
 

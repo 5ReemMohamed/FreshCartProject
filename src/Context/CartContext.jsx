@@ -59,7 +59,7 @@ export default function CartContextProvider({ children }) {
     }
 
     async function checkOutSession(cartId, shippingAddress) {
-        return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://5reemmohamed.github.io/FreshCartProject/#`, {
+        return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://5reemmohamed.github.io/FreshCartProject/#/`, {
             "shippingAddress": shippingAddress
 
         }, {
