@@ -87,7 +87,7 @@ export default function CartContextProvider({ children }) {
     async function getCart() {
         let response = await getUserCart();
         console.log(response.data.numOfCartItems);
-        setCart(response.data.numOfCartItems);
+        setCart(response?.data?.numOfCartItems);
     }
 
     useEffect(() => {

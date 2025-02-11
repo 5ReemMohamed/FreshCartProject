@@ -18,7 +18,7 @@ export default function WishListContextProvider({ children }){
               }
           })
           setWishList(data?.data||[]);
-          localStorage.setItem("wishlist",JSON.stringify(data?.data));
+          localStorage.setItem("wishlist",JSON.stringify(data?.data||[]));
         } catch (error) {
           console.log(error);    
         }
