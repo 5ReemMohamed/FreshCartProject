@@ -17,7 +17,7 @@ import VerifyResetCode from "./Components/VerifyResetCode/VerifyResetCode";
 import WishList from "./Components/WishList/WishList";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
-import { RouterProvider, createHashRouter } from "react-router";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0)
