@@ -17,11 +17,10 @@ export default function WishListContextProvider({ children }){
                   token
               }
           })
-          setWishList(data?.data);
+          setWishList(data?.data||[]);
           localStorage.setItem("wishlist",JSON.stringify(data?.data));
         } catch (error) {
-          console.log(error);
-          
+          console.log(error);    
         }
      }
  
