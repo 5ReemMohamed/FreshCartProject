@@ -114,8 +114,12 @@ export default function Cart() {
   async function handleCheckOut(cartId) {
     const {data} = await checkOutSession(cartId,formik.values);
     if(data.status=="success"){
-      console.log(data.session.url)
-    location.href=(data.session.url)
+      const redirectUrl = data.session.url;
+      if(window.location.pathname==="/allorders"){
+        window.location.href = redirectUrl.replace("/allorders", "#/allorders");
+      }else{
+        window.location.href = redirectUrl;
+      }
     }
   }
 
