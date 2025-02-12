@@ -7,7 +7,7 @@ import { useFormik } from "formik";
 import { useEffect } from "react";
 import { useState } from "react";
 import { FaSpinner, FaTrash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 
 export default function Cart() {
@@ -20,7 +20,8 @@ export default function Cart() {
   const [cartDetails, setCartDetails] = useState(null)
   const [products, setProducts] = useState([])
   const [isLoading, setIsLoadings] = useState(false);
-    const [apiError, setapiError] = useState("");
+  const [apiError, setapiError] = useState("");
+  const navigate=useNavigate();
 
   async function handleGetUserCart() {
     setIsLoadings(true);
@@ -122,7 +123,7 @@ export default function Cart() {
     const {data} = await cashPayment(cartId,cashFormik.values);
     setCart(0)
     
-        location.href="/allorders"
+        navigate("/allorders")
    
   }
 
