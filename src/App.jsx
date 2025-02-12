@@ -37,7 +37,7 @@ function App() {
         { path: "verify-code", element: <VerifyResetCode /> },
         { path: "reset-password", element: <ResetPassword /> },
         { path: "wishlist", element: <ProtectedRoute><WishList /></ProtectedRoute> },
-        { path: "#/allorders", element: <ProtectedRoute><AllOrders /></ProtectedRoute> },
+        { path: "allorders", element: <ProtectedRoute><AllOrders /></ProtectedRoute> },
         { path: "*", element: <Notfound /> },
       ]
     }

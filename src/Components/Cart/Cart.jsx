@@ -113,6 +113,7 @@ export default function Cart() {
   async function handleCheckOut(cartId) {
     const {data} = await checkOutSession(cartId,formik.values);
     if(data.status=="success"){
+      console.log(data.session.url)
     location.href=(data.session.url)
     }
   }
@@ -121,7 +122,7 @@ export default function Cart() {
     const {data} = await cashPayment(cartId,cashFormik.values);
     setCart(0)
     
-        location.href="#/allorders"
+        location.href="/allorders"
    
   }
 
