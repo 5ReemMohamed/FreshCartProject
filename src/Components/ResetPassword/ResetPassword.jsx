@@ -4,12 +4,14 @@ import axios from "axios";
 import resetImg from "../../assets/Resetpassword.png";
 import toast from "react-hot-toast";
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 
 export default function ResetPasswordAndChangePassword() {
   document.title="Reset Password"
   const { token, setToken, setIsLogin, setUserLogin } = useContext(UserContext);
   const [isLoggedIn, setIsLoggedIn] = useState(!!token); 
+  const navigate=useNavigate();
   const resetPasswordSchema = Yup.object({
     email: Yup.string().email("Invalid email address").required("Email is required"),
     newPassword: Yup.string().matches(/^[A-Z][a-z0-9]{5,16}$/,"password must start with capital letter and must be more than 5 characters").required("New password is required"),
@@ -47,7 +49,7 @@ export default function ResetPasswordAndChangePassword() {
               },
             });
            
-            window.location.href = "/"; 
+            navigate("/"); 
           }
         
       } catch (error) {

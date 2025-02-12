@@ -11,6 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 
 export default function Cart() {
+
   document.title="Cart"
   const [openOnlineForm, setOpenOnlineForm] = useState(false);
   const [openCashForm, setOpenCashForm] = useState(false);
